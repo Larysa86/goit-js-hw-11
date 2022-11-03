@@ -26,7 +26,7 @@ function onSearch(e) {
   API.getData(val, page).then(data => {
     page = 1;
     if (data.data.hits.length === 0) {
-      Notiflix.Notify.warning(
+      Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
       return;
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       const val = refs.form.elements.searchQuery.value;
       API.getData(val, page).then(data => {
         if (data.data.hits.length === 0) {
-          Notiflix.Notify.warning(
+          Notiflix.Notify.failure(
             "We're sorry, but you've reached the end of search results."
           );
           return;
