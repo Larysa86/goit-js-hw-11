@@ -12,14 +12,14 @@ const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
-refs.form.addEventListener('submit', onSubmit);
+refs.form.addEventListener('submit', onSearch);
 refs.gallery.addEventListener('click', e => {
   e.preventDefault();
 });
 
 let page = 1;
 
-function onSubmit(e) {
+function onSearch(e) {
   e.preventDefault();
   const val = refs.form.elements.searchQuery.value;
   refs.gallery.innerHTML = '';
