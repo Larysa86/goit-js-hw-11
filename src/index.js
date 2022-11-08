@@ -88,7 +88,7 @@ function infiniteScroll() {
             io.observe(target);
           }
         } catch (error) {
-          Notify.failure(error.message, 'Щось пішло не так!');
+          Notify.failure(error.message, 'Something went wrong!');
           onFetchError(error);
         }
       }
