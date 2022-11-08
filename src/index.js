@@ -23,8 +23,8 @@ function onSearch(e) {
   e.preventDefault();
   const val = refs.form.elements.searchQuery.value;
   refs.gallery.innerHTML = '';
+  page = 1;
   API.getData(val, page).then(data => {
-    page = 1;
     if (data.data.hits.length === 0) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
@@ -59,3 +59,5 @@ const observer = new IntersectionObserver((entries, observer) => {
     }
   });
 });
+
+
